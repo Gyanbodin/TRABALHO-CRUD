@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html  xmlns = " http://www.w3.org/1999/xhtml "
+      xmlns: th = " http://www.thymeleaf.org ">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Inserir</title>
+
+  <style></style>
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="Index.html">Crud</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="Inserir.html">Inserir</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="Editar.html">Editar</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="#contact">Pesquisar</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="#contact">Excluir</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div>
+  <form action = "/Inserir" method ="post">
+  <center><h1 class="mt-5">Inserir</h1>
+  <p class="lead"></p><div class="form-group">
+    <label class="col-md-2 control-label" for="Nome">nome</label>  
+    <div class="col-md-2">
+    <input class="form-control input-md" required="" type="text" maxlength="11" th:field="*{}" name = "Quantidade">
+     <label class="col-md-2 control-label" for="Nome">Quantidade</label>   
+    <input class="form-control input-md" required="" type="text" maxlength="10" onBlur="showhide()" th:field="*{}" name ="quantidade">  
+  </div>
+  </div>
+  <label class="col-md-1 control-label" for="Nome">Tamanho</label>  
+  <div class="col-md-2">
+  <input class="form-control input-md" placeholder="" required="" type="text" maxlength="10" onBlur="showhide()" th:field="*{}" name="tamanho"><br>
+  <input type="submit" value="Salvar" class="btn btn-success">Inserir</button>  
+  </div>
+</p></center>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <center>
+     <table border="1px">  
+  	<tr>
+  		<th> Código </th >
+  		<th > Quantidade </th >
+  		<Th > Excluir </th >
+  		<th > Editar </th > 		
+  	</tr>
+  	<tr th: each = " p: $ {produto} ">
+  		<td th: text = ${p.id}> 1 </td >
+  		<td th: text = " $ {p.nome} " > Al Star </td >
+  		<td th: text = " $ {p.quantidade} " > 2 </td > 
+  		<td th: text = " $ {p.nome} " > Tamanho </td >     	
+  		<Td> <a  class = "btn btn-outline-perigo " th:href ="@ {/apagar /{id} (id = $ {p.id})} ">Excluir </a > </td >	
+  		<Td> <um  th: href = "@ {/ Editar / {id} (id = $ {p.id})} ">Editar</a > </td >
+  	</tr>
+  </table>
+     </center>
+     
+     
+</body>
+
+</html>
